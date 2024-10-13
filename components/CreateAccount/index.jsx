@@ -1,12 +1,18 @@
-import { View, Text, TextInput, Button, StyleSheet, Image } from "react-native";
+import { View, Text, TextInput, StyleSheet, Image } from "react-native";
 import React from "react";
+import { TouchableOpacity } from "react-native";
 
-const CreateAccount = () => {
+const CreateAccount = ({ navigation }) => {
   return (
     <View>
-      <View style={styles.leftArrow}>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.goBack();
+        }}
+        style={styles.leftArrow}
+      >
         <Image source={require("../../assets/images/leftArrow.png")} />
-      </View>
+      </TouchableOpacity>
       <View style={styles.mainContent}>
         <View style={styles.textContent}>
           <Text style={styles.text1}>Create an account</Text>
@@ -18,12 +24,15 @@ const CreateAccount = () => {
           <TextInput style={styles.textInput2} placeholder="Password" />
         </View>
         <View style={styles.buttonContainer}>
-          <Button
-            // onPress={onPressCreateAccount}
-            title="  Create account  "
-            color="#31A062"
-          />
-          <Text style={styles.buttonText}>Already have an account?</Text>
+          <TouchableOpacity
+            style={styles.CreateAccountButtonContainer}
+            onPress={() => {}}
+          >
+            <Text style={styles.button}> Create account</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.buttonText}>Already have an account?</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -34,7 +43,7 @@ export default CreateAccount;
 
 const styles = StyleSheet.create({
   leftArrow: {
-    marginTop: 100,
+    marginTop: 80,
     marginLeft: 20,
     height: "3%",
     width: "7%",
@@ -45,7 +54,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 25,
-    backgroundColor: "#FFFFFF",
   },
   textContent: {
     display: "flex",
@@ -99,7 +107,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
   },
-
+  CreateAccountButtonContainer: {
+    marginLeft: 30,
+    marginRight: 30,
+    width: "80%",
+    backgroundColor: "#31A062",
+    paddingBottom: 10,
+    paddingTop: 10,
+    borderRadius: 50,
+  },
+  button: {
+    width: "100%",
+    fontSize: 18,
+    color: "white",
+    textAlign: "center",
+  },
   buttonText: {
     color: "#31A062",
     marginTop: 20,

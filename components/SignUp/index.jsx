@@ -1,6 +1,6 @@
-import { Button, Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const SignUp = () => {
+const SignUp = ({ navigation }) => {
   return (
     <View style={styles.main2}>
       <Image
@@ -15,13 +15,17 @@ const SignUp = () => {
         </Text>
       </View>
       <View style={styles.div3}>
-        <Button
-          style={styles.button}
-          // onPress={onPressCreateAccount}
-          title="Create account"
-          color="#31A062"
-        />
-        <Text style={styles.text3}>Login</Text>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("CreateAccount");
+          }}
+          style={styles.CreateAccountButtonContainer}
+        >
+          <Text style={styles.button}> Create account</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.text3}>Login</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -49,7 +53,7 @@ const styles = StyleSheet.create({
   },
   text1: {
     fontWeight: "bold",
-    fontSize: 30,
+    fontSize: 28,
     textAlign: "center",
   },
   text2: {
@@ -71,5 +75,20 @@ const styles = StyleSheet.create({
   text3: {
     color: "#31A062",
     marginTop: 10,
+  },
+  CreateAccountButtonContainer: {
+    marginLeft: 30,
+    marginRight: 30,
+    width: "80%",
+    backgroundColor: "#31A062",
+    paddingBottom: 10,
+    paddingTop: 10,
+    borderRadius: 50,
+  },
+  button: {
+    width: "100%",
+    fontSize: 18,
+    color: "white",
+    textAlign: "center",
   },
 });
