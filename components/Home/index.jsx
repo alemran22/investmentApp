@@ -23,7 +23,7 @@ const Homepage = () => {
           <Image source={require("../../assets/images/Notification 1.png")} />
         </TouchableOpacity>
       </View>
-      <ScrollView style={styles.main}>
+      <ScrollView horizontal={false} style={styles.main}>
         <Text style={styles.welcomeText}>Welcome, Jessie.</Text>
         <View style={styles.assetCard}>
           <Text style={styles.yourAssetText}>Your total asset portfolio</Text>
@@ -73,6 +73,45 @@ const Homepage = () => {
               </ImageBackground>
             </View>
           </ScrollView>
+        </View>
+        {/* invesment guide */}
+        <View>
+          <Text style={styles.guideViewHeading}>Investment Guide</Text>
+          {/* card1 */}
+          <View style={styles.guideView}>
+            <View style={styles.guide1}>
+              <Text style={styles.guide1Text1}>Basic type of investments</Text>
+              <Text style={styles.guide1Text2}>
+                This is how you set your foot for 2020 Stock market recession.
+                What’s next...
+              </Text>
+            </View>
+            <View style={styles.guide2}>
+              <View style={styles.main1}>
+                <Image
+                  source={require("../../assets/images/Ellipse 740 (1).png")}
+                />
+              </View>
+            </View>
+          </View>
+          <View style={styles.horizontal}></View>
+          {/*  card2 */}
+          <View style={styles.guideView}>
+            <View style={styles.guide1}>
+              <Text style={styles.guide1Text1}>How much can you start</Text>
+              <Text style={styles.guide1Text2}>
+                What do you like to see? It’s a very different market from 2018.
+                The way...
+              </Text>
+            </View>
+            <View style={styles.guide2}>
+              <View style={styles.main1}>
+                <Image
+                  source={require("../../assets/images/Ellipse 740.png")}
+                />
+              </View>
+            </View>
+          </View>
         </View>
       </ScrollView>
       <View style={styles.footer}>
@@ -129,12 +168,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#FEFEFE",
     paddingLeft: 18,
     paddingRight: 18,
-    paddingTop: 8,
-    paddingBottom: 8,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
     borderRadius: 15,
     marginRight: 8,
+    paddingBottom: 1,
   },
-  buttonText: { color: "#31A078", fontSize: 14, fontWeight: "semibold" },
+  buttonText: {
+    color: "#31A078",
+    fontSize: 14,
+    fontWeight: "semibold",
+  },
   bestPlan: { paddingTop: 20 },
   bestPlanText: {
     display: "flex",
@@ -166,6 +211,32 @@ const styles = StyleSheet.create({
     fontWeight: "semibold",
     marginLeft: 10,
     color: "white",
+  },
+  guideView: {
+    marginTop: 15,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  guideViewHeading: { fontSize: 22, fontWeight: "bold", marginTop: 30 },
+  guide1: {
+    width: "75%",
+  },
+  guide1Text1: {
+    fontWeight: "bold",
+    fontSize: 18,
+  },
+  horizontal: {
+    borderWidth: 0.5,
+    borderBottomColor: "#D4D4D6",
+    marginTop: 20,
+  },
+  guide1Text2: {
+    marginTop: 5,
+  },
+  guide2: {
+    width: "25%",
   },
   footer: {
     height: 70,
