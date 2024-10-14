@@ -12,9 +12,11 @@ import { TouchableOpacity } from "react-native";
 import image from "../../assets/images/Card Stock01.png";
 import image1 from "../../assets/images/Card Stock02.png";
 import image2 from "../../assets/images/Card Stock02 (1).png";
-const Homepage = () => {
+import Footer from "../shared/Footer";
+const Homepage = ({ navigation }) => {
   return (
     <View style={styles.body}>
+      {/* header start */}
       <View style={styles.iconContainer}>
         <TouchableOpacity>
           <Image source={require("../../assets/images/menu.png")} />
@@ -23,6 +25,8 @@ const Homepage = () => {
           <Image source={require("../../assets/images/Notification 1.png")} />
         </TouchableOpacity>
       </View>
+      {/* header end */}
+      {/* main content */}
       <ScrollView horizontal={false} style={styles.main}>
         <Text style={styles.welcomeText}>Welcome, Jessie.</Text>
         <View style={styles.assetCard}>
@@ -74,7 +78,7 @@ const Homepage = () => {
             </View>
           </ScrollView>
         </View>
-        {/* invesment guide */}
+        {/* investment guide */}
         <View>
           <Text style={styles.guideViewHeading}>Investment Guide</Text>
           {/* card1 */}
@@ -114,24 +118,8 @@ const Homepage = () => {
           </View>
         </View>
       </ScrollView>
-      <View style={styles.footer}>
-        <TouchableOpacity style={styles.footerCard}>
-          <Image source={require("../../assets/images/Home 1.png")} />
-          <Text style={styles.footerText}>Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerCard}>
-          <Image source={require("../../assets/images/Search 1.png")} />
-          <Text style={styles.footerText}>Product</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerCard}>
-          <Image source={require("../../assets/images/transaction 1.png")} />
-          <Text style={styles.footerText}>Transaction</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerCard}>
-          <Image source={require("../../assets/images/Home 1.png")} />
-          <Text style={styles.footerText}>Account</Text>
-        </TouchableOpacity>
-      </View>
+      {/* footer */}
+      <Footer navigation={navigation} />
     </View>
   );
 };
@@ -139,7 +127,7 @@ const Homepage = () => {
 export default Homepage;
 
 const styles = StyleSheet.create({
-  body: { marginTop: 40, marginRight: 15, marginLeft: 15 },
+  body: { paddingTop: 40, marginRight: 15, marginLeft: 15, height: "100%" },
   main: { height: "100%" },
   iconContainer: {
     display: "flex",
@@ -238,18 +226,4 @@ const styles = StyleSheet.create({
   guide2: {
     width: "25%",
   },
-  footer: {
-    height: 70,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  footerCard: {
-    width: "25%",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  footerText: { color: "#32A078" },
 });
