@@ -15,7 +15,7 @@ const Footer = ({ navigation }) => {
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Product");
+          navigation.navigate("ProductsScreen");
         }}
         style={styles.footerCard}
       >
@@ -33,7 +33,7 @@ const Footer = ({ navigation }) => {
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Account");
+          navigation.navigate("Profile");
         }}
         style={styles.footerCard}
       >
@@ -60,5 +60,5 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
   },
-  footerText: { color: "#32A078", marginTop: 10 },
+  footerText: { marginTop: 10 },
 });
