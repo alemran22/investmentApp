@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Homepage from "./components/Home";
 import Products from "./components/Products";
 import Profile from "./components/Profile";
+import NotificationScreen from "./components/NotificationScreen";
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -16,6 +17,10 @@ const App = () => {
         <Stack.Screen name="HomePage" component={Homepage} />
         <Stack.Screen name="ProductsScreen" component={Products} />
         <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen
+          name="NotificationScreen"
+          component={NotificationScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

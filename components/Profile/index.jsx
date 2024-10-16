@@ -1,23 +1,18 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { TouchableOpacity } from "react-native";
+
 import Footer from "../shared/Footer";
 
 import ProfileData from "../../constants/Profile";
 import ProfileInfo from "./ProfileInfo";
 import { ScrollView } from "react-native";
+import GoBack from "../shared/goBack";
 
 const Profile = ({ navigation }) => {
   return (
     <View style={styles.body}>
       {/* header */}
-      <TouchableOpacity
-        onPress={() => {
-          navigation.goBack();
-        }}
-      >
-        <Image source={require("../../assets/images/leftArrow.png")} />
-      </TouchableOpacity>
+      <GoBack navigation={navigation} />
       <Text style={styles.title}>Profile</Text>
       {/* main */}
       <ScrollView>

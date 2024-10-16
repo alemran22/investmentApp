@@ -10,9 +10,7 @@ const ProfileInfo = ({ icon, image, title }) => {
           <Image source={image} />
         </View>
         <Text style={styles.text}>{title}</Text>
-        <View style={styles.icon}>
-          <Image source={icon} />
-        </View>
+        <View style={styles.icon}>{icon}</View>
       </View>
     </TouchableOpacity>
   );

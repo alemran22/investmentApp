@@ -8,21 +8,24 @@ import {
 } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
-
+import Ionicons from "@expo/vector-icons/Ionicons";
 import image from "../../assets/images/Card Stock01.png";
 import image1 from "../../assets/images/Card Stock02.png";
 import image2 from "../../assets/images/Card Stock02 (1).png";
 import Footer from "../shared/Footer";
+import GoBack from "../shared/goBack";
 const Homepage = ({ navigation }) => {
   return (
     <View style={styles.body}>
       {/* header start */}
       <View style={styles.iconContainer}>
-        <TouchableOpacity>
-          <Image source={require("../../assets/images/menu.png")} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={require("../../assets/images/Notification 1.png")} />
+        <GoBack navigation={navigation} />
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("NotificationScreen");
+          }}
+        >
+          <Ionicons name="notifications-outline" size={24} color="black" />
         </TouchableOpacity>
       </View>
       {/* header end */}

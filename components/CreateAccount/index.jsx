@@ -1,18 +1,12 @@
 import { View, Text, TextInput, StyleSheet, Image } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
+import GoBack from "../shared/goBack";
 
 const CreateAccount = ({ navigation }) => {
   return (
-    <View>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.goBack();
-        }}
-        style={styles.leftArrow}
-      >
-        <Image source={require("../../assets/images/leftArrow.png")} />
-      </TouchableOpacity>
+    <View style={styles.body}>
+      <GoBack navigation={navigation} />
       <View style={styles.mainContent}>
         <View style={styles.textContent}>
           <Text style={styles.text1}>Create an account</Text>
@@ -24,10 +18,7 @@ const CreateAccount = ({ navigation }) => {
           <TextInput style={styles.textInput2} placeholder="Password" />
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.CreateAccountButtonContainer}
-            onPress={() => {}}
-          >
+          <TouchableOpacity style={styles.CreateAccountButtonContainer}>
             <Text style={styles.button}> Create account</Text>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -42,14 +33,9 @@ const CreateAccount = ({ navigation }) => {
 export default CreateAccount;
 
 const styles = StyleSheet.create({
-  leftArrow: {
-    marginTop: 80,
-    marginLeft: 20,
-    height: "3%",
-    width: "7%",
-  },
+  body: { paddingTop: 60, padding: 10 },
   mainContent: {
-    marginTop: 20,
+    marginTop: 25,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -75,8 +61,6 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: "100%",
-    marginLeft: 25,
-    marginRight: 25,
     display: "flex",
     gap: 25,
   },
