@@ -2,9 +2,13 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 
-const ProfileInfo = ({ icon, image, title }) => {
+const ProfileInfo = ({ icon, image, title, onPress, navigation }) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate(onPress);
+      }}
+    >
       <View style={styles.card}>
         <View style={styles.img}>
           <Image source={image} />

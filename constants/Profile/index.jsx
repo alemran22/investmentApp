@@ -5,6 +5,7 @@ const ProfileData = [
     image: require("../../assets/images/contact.png"),
     title: "Contact Info",
     icon: <AntDesign name="right" size={24} color="black" />,
+    onPress: "ContactInfo",
   },
   {
     id: 2,
