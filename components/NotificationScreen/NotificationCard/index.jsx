@@ -25,6 +25,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    paddingBottom: 30,
+
+    borderBottomColor: "black",
+    borderBottomWidth: 1,
   },
   image: { width: "20%", marginRight: 10 },
   description: { width: "60%" },

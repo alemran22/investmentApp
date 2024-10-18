@@ -24,7 +24,7 @@ const Footer = ({ navigation }) => {
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Transactions");
+          navigation.navigate("BankAccountInfo");
         }}
         style={styles.footerCard}
       >

@@ -7,6 +7,7 @@ import Products from "./components/Products";
 import Profile from "./components/Profile";
 import NotificationScreen from "./components/NotificationScreen";
 import ContactInfo from "./components/ContactInfo";
+import BankAccountInfo from "./components/BankAccountInfo";
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           component={NotificationScreen}
         />
         <Stack.Screen name="ContactInfo" component={ContactInfo} />
+        <Stack.Screen name="BankAccountInfo" component={BankAccountInfo} />
       </Stack.Navigator>
     </NavigationContainer>
   );
